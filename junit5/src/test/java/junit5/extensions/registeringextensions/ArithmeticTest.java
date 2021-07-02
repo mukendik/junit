@@ -2,8 +2,10 @@ package junit5.extensions.registeringextensions;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 import junit5.aut.Calculate;
+import junit5.extensions.exceptionhandling.DevideExceptionHandler;
 
 public class ArithmeticTest {
 	 private int result = 5;
@@ -29,7 +31,7 @@ public class ArithmeticTest {
 	    Assertions.assertEquals(1, result);
 	  }  
 	  
-	  @ExtendWith(DevideExceptionHandler.class)
+	  @ExtendWith({LoggingExtension.class, DevideExceptionHandler.class})
 	  @Test
 	  void test_Devide_by_zero() {
 	    result = Calculate.devide(result, 0);
