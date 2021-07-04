@@ -11,7 +11,6 @@ public class LoggingExtension implements TestExecutionExceptionHandler{
                 "Hey, there seems to be something wrong with your test because :\n" + 
                 throwable.getMessage());
 			throw throwable;  
-		
 	}
 
 }
