@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import junit5.aut.Calculate;
 import junit5.extensions.exceptionhandling.DevideExceptionHandler;
 import junit5.extensions.testinstancepostprocessing.LoggingPostProcessExtension;
+import junit5.extensions.testinstancepredestroy.*;
 
 public class ArithmeticTest {
 		
@@ -21,6 +22,8 @@ public class ArithmeticTest {
 	    Assertions.assertEquals(10, result);
 	  }
 	  
+	 
+	  @ExtendWith(DisplayPredestroyedInstances.class)
 	  @Test
 	  void test_Multiply() {
 	    result = Calculate.multiple(result, 5);
