@@ -1,0 +1,61 @@
+package junit5.extensions.seleniumjupiter;
+
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.By;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.BeforeTest;
+
+import io.github.bonigarcia.seljup.SeleniumJupiter;
+import io.github.bonigarcia.seljup.DriverCapabilities;
+
+@ExtendWith(SeleniumJupiter.class)
+public class LambdaTestJupiterTest {
+
+	public RemoteWebDriver driver = null;
+    String username = "mukendik";
+	String accessKey = "mP7l3gCMXcLmwy7alMb6rAuqAOKcAAXMCklWlHLWbi8XhY0JWd";
+
+	{
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("platform", "Windows 7"); // MacOS Catalina Windows 10   
+	    capabilities.setCapability("browserName", "Chrome");
+	    capabilities.setCapability("version", "91.0"); // If this cap isn't specified, it will just get the any available one
+        capabilities.setCapability("resolution","1024x768");
+        capabilities.setCapability("build", "elenium jupiter");
+        capabilities.setCapability("name", "LambdaTest selenium jupiter");
+        capabilities.setCapability("network", true); // To enable network logs
+        capabilities.setCapability("visual", true); // To enable step by step screenshot
+        capabilities.setCapability("video", true); // To enable video recording
+        capabilities.setCapability("console", true); // To capture console logs
+    
+        try {       
+			driver= new RemoteWebDriver(new URL("https://"+username+":"+accessKey+"@hub.lambdatest.com/wd/hub"), capabilities);            
+        } catch (MalformedURLException e) {
+            System.out.println("Invalid grid URL");
+        }
+    }
+
+	@Test
+	public void testWithLambdaTest() throws Exception {
+				try {
+					driver.get("https://lambdatest.github.io/sample-todo-app/");
+					driver.findElement(By.name("li1")).click();
+					driver.findElement(By.name("li2")).click();
+					driver.findElement(By.id("sampletodotext")).clear();
+					driver.findElement(By.id("sampletodotext")).sendKeys("Yey, Let's add it to list");
+					driver.findElement(By.id("addbutton")).click();
+					driver.quit();					
+				} catch (Exception e) {
+					System.out.println(e.getMessage());
+				}
+	}
+	
+}
