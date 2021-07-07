@@ -3,25 +3,24 @@ package junit5.extensions.seleniumjupiter;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import org.junit.jupiter.api.BeforeAll;
+
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.jupiter.api.TestInstance.Lifecycle;
+
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.testng.annotations.BeforeTest;
+
 
 import io.github.bonigarcia.seljup.SeleniumJupiter;
-import io.github.bonigarcia.seljup.DriverCapabilities;
+
 
 @ExtendWith(SeleniumJupiter.class)
 public class LambdaTestJupiterTest {
 
 	public RemoteWebDriver driver = null;
-    String username = "mukendik";
-	String accessKey = "mP7l3gCMXcLmwy7alMb6rAuqAOKcAAXMCklWlHLWbi8XhY0JWd";
+	String username = "ghislainmukendi";
+	String accessKey = "zxa3jjOjQatZZVFsjtkgGZlZbHOGRkxr0DzSWO3fKiTnEp6DZi";
 
 	{
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -29,7 +28,7 @@ public class LambdaTestJupiterTest {
 	    capabilities.setCapability("browserName", "Chrome");
 	    capabilities.setCapability("version", "91.0"); // If this cap isn't specified, it will just get the any available one
         capabilities.setCapability("resolution","1024x768");
-        capabilities.setCapability("build", "elenium jupiter");
+        capabilities.setCapability("build", "Selenium jupiter");
         capabilities.setCapability("name", "LambdaTest selenium jupiter");
         capabilities.setCapability("network", true); // To enable network logs
         capabilities.setCapability("visual", true); // To enable step by step screenshot
