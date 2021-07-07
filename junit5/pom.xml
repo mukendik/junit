@@ -41,39 +41,36 @@
 	        <artifactId>selenium-server</artifactId>
 	        <version>3.14.0</version>
 	</dependency>
-<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.5.2</version>
-</dependency>
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>2.5.2</version>
+	</dependency>
 
-<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-test</artifactId>
-    <version>2.5.2</version>
-    <scope>test</scope>
-</dependency>
-	
+	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-test</artifactId>
+	    <version>2.5.2</version>
+	    <scope>test</scope>
+	</dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
-<dependency>
-    <groupId>org.springframework</groupId>
-    <artifactId>spring-test</artifactId>
-    <version>5.3.8</version>
-    <scope>test</scope>
-</dependency>
-    
-	
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-test</artifactId>
+	    <version>5.3.8</version>
+	    <scope>test</scope>
+	</dependency>	
 </dependencies>
-<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-		<finalName>${context.path}</finalName>
+	<build>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+			</plugins>
+			<finalName>${context.path}</finalName>
 	</build>
   
 </project>
